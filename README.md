@@ -36,13 +36,13 @@
 ```text
 .
 ├── assets/
-│   └── images/
-│       └── touhid.JPG      # Profile Image
-├── cv/
-│   └── Touhid_Imam.pdf    # Downloadable Resume
+│   ├── images/
+│   │   └── touhid.JPG       # Profile Image
+│   └── docs/                # Recommended to put CV in a 'docs' subfolder
+│       └── Touhid_Imam.pdf  # Downloadable Resume
 ├── .streamlit/
-│   └── secrets.toml        # Local API & Password storage (Git-ignored)
-├── app.py                  # Main Streamlit Application logic
-├── requirements.txt        # Project Dependencies
-└── README.md               # Project Documentation
+│   └── secrets.toml         # Local API & Password storage (Git-ignored)
+├── app.py                   # Main Streamlit Application logic
+├── requirements.txt         # Project Dependencies
+└── README.md                # Project Documentation
 ```

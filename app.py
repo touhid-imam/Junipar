@@ -227,7 +227,7 @@ with st.sidebar:
 
 # --- NEW: DOWNLOAD CV BUTTON ---
     try:
-        with open("cv/Touhid_Imam.pdf", "rb") as pdf_file:
+        with open("assets/docs/Touhid_Imam.pdf", "rb") as pdf_file:
             PDFbyte = pdf_file.read()
 
         st.download_button(
