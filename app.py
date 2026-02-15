@@ -179,6 +179,21 @@ st.markdown("""
         border: 1px solid #30363d !important;
     }
 
+    /* 1. Global Text Color Override */
+    html, body, [data-testid="stWidgetLabel"], .stMarkdown, p, h1, h2, h3, h4, h5, h6, span {
+        color: #ffffff !important;
+    }
+
+    /* 2. Specific fix for Sidebar text which often defaults to grey */
+    [data-testid="stSidebar"] .stMarkdown p {
+        color: #ffffff !important;
+    }
+    
+    /* 3. Ensure Chat Input text is white */
+    [data-testid="stChatInput"] textarea {
+        color: #ffffff !important;
+    }
+
     </style>
     """, unsafe_allow_html=True)
 
@@ -208,9 +223,6 @@ with st.sidebar:
         <a href="https://linkedin.com/in/touhidimam/" target="_blank" style="color: #00d4ff; text-decoration: none;">🔗 LinkedIn</a>
         <span style="color: white;">|</span>
         <a href="https://github.com/touhid-imam/data-analyst" target="_blank" style="color: #00d4ff; text-decoration: none;">🐙 GitHub</a>
-    </div>
-    <div style="text-align: center; margin-top: 8px; font-size: 0.85rem; color: #00d4ff;">
-        🔑 Agent Password: <b>{st.secrets["PORTFOLIO_PASSWORD"]}</b>
     </div>
     """,
         unsafe_allow_html=True
@@ -257,7 +269,12 @@ if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
 
 if not st.session_state.authenticated:
-    st.info("🔒 This AI agent is password-protected to manage API usage.")
+    # Title for the login screen
+    st.markdown("<h2 style='text-align: center; color: #00d4ff;'>🔒 Junipar AI Access</h2>",
+                unsafe_allow_html=True)
+
+    st.info(
+        f"This AI agent is password-protected to manage API usage. | 🔑 **Agent Password: {st.secrets['PORTFOLIO_PASSWORD']}**")
     password_input = st.text_input(
         "Enter password to chat with Junipar:", type="password")
 
