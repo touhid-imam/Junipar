@@ -100,6 +100,11 @@ st.markdown("""
     .stToolbarActionButton {
             display: none;
         }
+            
+    # Remove Streamlit icon and profile 
+    a._container_gzau3_1._viewerBadge_nim44_23, ._profileContainer_gzau3_53 {
+            display: none;
+        }
 
 
     /* 4. FORCE THE COLLAPSE BUTTON TO THE RIGHT */
