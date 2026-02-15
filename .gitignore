@@ -116,6 +116,16 @@ ipython_config.py
 #pdm.toml
 .pdm-python
 .pdm-build/
+# Streamlit secrets and config
+.streamlit/
+
+# Python virtual environments
+venv/
+.env
+__pycache__/
+
+# OS-specific files
+.DS_Store
 
 # pixi
 #   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
