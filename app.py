@@ -77,17 +77,17 @@ NOTE: You are welcome to contact any of these references directly for profession
 # --- 4. CUSTOM CSS ---
 st.markdown("""
     <style>
-    /* 1. Base App Styling */
+    /* Base App Styling */
     .stApp { background-color: #0e1117; color: #ffffff; }
 
-    /* 2. Target the Sidebar Container */
+    /* Target the Sidebar Container */
     section[data-testid="stSidebar"] {
         background-color: #161b22;
         border-right: 1px solid #30363d;
         width: 350px !important;
     }
 
-    /* 3. CENTER CONTENT BUT KEEP BUTTON RIGHT */
+    /* CENTER CONTENT BUT KEEP BUTTON RIGHT */
     /* Target the inner container of the sidebar */
     [data-testid="stSidebarUserContent"] {
         display: flex;
@@ -108,7 +108,7 @@ st.markdown("""
             
 
 
-    /* 4. FORCE THE COLLAPSE BUTTON TO THE RIGHT */
+    /* FORCE THE COLLAPSE BUTTON TO THE RIGHT */
     /* We target the header container specifically */
     [data-testid="stSidebarHeader"] {
         display: flex !important;
@@ -124,7 +124,7 @@ st.markdown("""
             flex-direction: column;
             }
 
-    /* 5. Image & Card Styling */
+    /* Image & Card Styling */
     .portfolio-image-wrapper {
         display: flex;
         justify-content: center;
@@ -179,45 +179,59 @@ st.markdown("""
         border: 1px solid #30363d !important;
     }
 
-    /* 1. Global Text Color Override */
+    /* Global Text Color Override */
     html, body, [data-testid="stWidgetLabel"], .stMarkdown, p, h1, h2, h3, h4, h5, h6, span {
         color: #ffffff !important;
     }
 
-    /* 2. Specific fix for Sidebar text which often defaults to grey */
+    /* Specific fix for Sidebar text which often defaults to grey */
     [data-testid="stSidebar"] .stMarkdown p {
         color: #ffffff !important;
     }
     
-    /* 3. Ensure Chat Input text is white */
+    /* Ensure Chat Input text is white */
     [data-testid="stChatInput"] textarea {
         color: #ffffff !important;
     }
             
 
-    /* 1. Force Header Background to be Dark (Fixes mobile white bar) */
+    /* Force Header Background to be Dark (Fixes mobile white bar) */
     [data-testid="stHeader"] {
         background-color: #0e1117 !important;
     }
-
-    /* 2. Fix Button Visibility (White background/White text fix) */
-    div.stButton > button {
+    /* Global Button Visibility Fix (Regular & Download) */
+    .stButton > button, .stDownloadButton > button {
         background-color: #1c2128 !important; /* Dark background */
         color: #ffffff !important;            /* White text */
-        border: 1px solid #00d4ff !important; /* Blue border to make it pop */
-        transition: all 0.3s ease;
+        border: 1px solid #00d4ff !important; /* Blue border */
+        width: 100% !important;               /* Thumb-friendly mobile buttons */
+        transition: all 0.3s ease !important;
+        opacity: 1 !important;                 /* Prevent transparency issues */
     }
 
-    /* 3. Fix Button Hover/Active state for Mobile */
-    div.stButton > button:hover, div.stButton > button:active, div.stButton > button:focus {
-        background-color: #00d4ff !important; /* Blue background on tap */
-        color: #0e1117 !important;            /* Dark text on tap */
+    /* Global Button Hover/Tap states (Blue on tap/hover) */
+    .stButton > button:hover, .stButton > button:active, .stButton > button:focus,
+    .stDownloadButton > button:hover, .stDownloadButton > button:active, .stDownloadButton > button:focus {
+        background-color: #00d4ff !important; /* Blue fill */
+        color: #0e1117 !important;            /* Dark text for contrast */
         border: 1px solid #00d4ff !important;
     }
 
-    /* 4. Fix Chat Input Background for Mobile */
+    /* Global Header/Menu Visibility Fix */
+    [data-testid="stHeader"], header {
+        background-color: #0e1117 !important; /* Prevents white bar at top */
+        visibility: visible !important;
+    }
+
+    /* Chat Input Visibility Fix */
     [data-testid="stChatInput"] {
         background-color: #0e1117 !important;
+        border-top: 1px solid #30363d !important;
+    }
+
+    /* Fix Alert/Info box text (The Password Notice) */
+    .stAlert p {
+        color: #ffffff !important;
     }
 
     </style>
