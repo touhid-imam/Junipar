@@ -193,6 +193,16 @@ st.markdown("""
     [data-testid="stChatInput"] textarea {
         color: #ffffff !important;
     }
+            
+
+    header.stAppHeader.st-emotion-cache-1s6ol36.est0q591 {
+        background: transparent;
+    }
+            
+    button {
+        background: transparent;
+        border-color: #ffffff;
+    }
 
     </style>
     """, unsafe_allow_html=True)
