@@ -38,11 +38,10 @@
 ├── assets/
 │   ├── images/
 │   │   └── touhid.JPG       # Profile Image
-│   └── docs/                # Recommended to put CV in a 'docs' subfolder
-│       └── Touhid_Imam.pdf  # Downloadable Resume
-├── .streamlit/
-│   └── secrets.toml         # Local API & Password storage (Git-ignored)
+│   └── docs/
+│       └── Touhid_Imam.pdf  # Downloadable Resume (PDF)
 ├── app.py                   # Main Streamlit Application logic
-├── requirements.txt         # Project Dependencies
-└── README.md                # Project Documentation
+├── requirements.txt         # Project Dependencies (Streamlit, OpenAI)
+├── .gitignore               # Excludes secrets and system files from Git
+└── README.md                # Project Documentation              #
 ```
