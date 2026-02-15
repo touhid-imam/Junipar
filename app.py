@@ -95,6 +95,16 @@ st.markdown("""
         align-items: center !important;
         text-align: center;
     }
+            
+    /* Hide only the GitHub and Fork icons in the top right */
+    [data-testid="stHeader"] a {
+        display: none;
+    }
+
+    /* Ensure the main triple-dot menu remains visible */
+    [data-testid="stHeader"] button {
+        visibility: visible;
+    }
 
 
     /* 4. FORCE THE COLLAPSE BUTTON TO THE RIGHT */
