@@ -195,13 +195,29 @@ st.markdown("""
     }
             
 
-    header.stAppHeader.st-emotion-cache-1s6ol36.est0q591 {
-        background: transparent;
+    /* 1. Force Header Background to be Dark (Fixes mobile white bar) */
+    [data-testid="stHeader"] {
+        background-color: #0e1117 !important;
     }
-            
-    button {
-        background: transparent;
-        border-color: #ffffff;
+
+    /* 2. Fix Button Visibility (White background/White text fix) */
+    div.stButton > button {
+        background-color: #1c2128 !important; /* Dark background */
+        color: #ffffff !important;            /* White text */
+        border: 1px solid #00d4ff !important; /* Blue border to make it pop */
+        transition: all 0.3s ease;
+    }
+
+    /* 3. Fix Button Hover/Active state for Mobile */
+    div.stButton > button:hover, div.stButton > button:active, div.stButton > button:focus {
+        background-color: #00d4ff !important; /* Blue background on tap */
+        color: #0e1117 !important;            /* Dark text on tap */
+        border: 1px solid #00d4ff !important;
+    }
+
+    /* 4. Fix Chat Input Background for Mobile */
+    [data-testid="stChatInput"] {
+        background-color: #0e1117 !important;
     }
 
     </style>
