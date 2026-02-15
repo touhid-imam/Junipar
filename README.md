@@ -45,3 +45,15 @@
 ├── .gitignore               # Excludes secrets and system files from Git
 └── README.md                # Project Documentation              #
 ```
+
+## ⚙️ Local Setup
+
+To run this project locally, you must manually create a secrets file:
+
+1. Create a folder named `.streamlit` in the root directory.
+2. Create a file named `secrets.toml` inside that folder.
+3. Add the following keys:
+   ```toml
+   OPENAI_API_KEY = "your_openai_api_key_here"
+   PORTFOLIO_PASSWORD = "your_chosen_password"
+   ```
